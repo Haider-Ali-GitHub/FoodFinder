@@ -18,7 +18,7 @@ function App() {
           Learn React
         </a> */}
         <p>
-          WhereTo?
+          BiteBuddy
         </p>
       </header>
     </div>
