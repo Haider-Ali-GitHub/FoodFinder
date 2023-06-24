@@ -15,12 +15,13 @@
 
 .App-header {
   background-color: rgb(221, 226, 221);
+  font-weight: 700;
   min-height: 100vh;
-  display: flex;
+  display:table-cell;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 15vmin);
+  font-size: calc(10px + 5vmin);
   color: rgb(62, 62, 62);
 }
 
