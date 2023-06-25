@@ -8,6 +8,9 @@ function App() {
           BiteBuddy
         </p>
       </header>
+      <body>
+        
+      </body>
     </div>
   );
 }
