@@ -8,10 +8,8 @@ function App() {
           BiteBuddy      
         </p>
       </header>
-      <body>
-        
+      <body className='App-body'>
         <p>
-  
           Where do you want to go? 
         </p>
       </body>

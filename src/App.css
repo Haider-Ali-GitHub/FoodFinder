@@ -2,24 +2,25 @@
 .App {
   text-align: center; /* Centers the text inside the element */
 }
-
-/* Styles for elements with class name "App-logo" */
-.App-logo {
-  height: 40vmin; /* Sets the height of the element to 40% of the viewport's smaller dimension */
-  pointer-events: none; /* Disables pointer events on the element */
-}
-
 /* Styles for elements with class name "App-header" */
 .App-header {
-  background-color: rgb(221, 226, 221); /* Sets the background color */
   font-family: serif; /* Specifies the font family */
   font-weight: 700; /* Sets the font weight to bold */
-  min-height: 100vh; /* Sets the minimum height to 100% of the viewport height */
-  display: flex; /* Uses flexbox for layout */
-  flex-direction: column; /* Sets the flex direction to column */
-  align-items: center; /* Centers the items horizontally */
-  justify-content: flex-start; /* Aligns the items to the top of the container */
+  background-color: rgb(156, 201, 156); /* Sets the background color */
+  min-height: 5vh; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: flex-start; 
+ 
   font-size: calc(10px + 5vmin); /* Sets the font size based on the viewport size */
   color: rgb(62, 62, 62); /* Sets the text color */
 }
-
+.App-body{
+  background-color: rgb(221, 226, 221); /* Sets the background color */
+}
+/* Sets the minimum height to 100% of the viewport height */
+/* Uses flexbox for layout */
+/* Sets the flex direction to column */
+/* Centers the items horizontally */
+/* Aligns the items to the top of the container */
