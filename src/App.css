@@ -2,6 +2,9 @@
 .App {
   text-align: center; /* Centers the text inside the element */
 }
+.App-background{
+  background-color: rgb(221, 226, 221); /* Sets the background color */
+}
 /* Styles for elements with class name "App-header" */
 .App-header {
   font-family: serif; /* Specifies the font family */
@@ -17,7 +20,8 @@
   color: rgb(62, 62, 62); /* Sets the text color */
 }
 .App-body{
-  background-color: rgb(221, 226, 221); /* Sets the background color */
+  font-family: serif; /* Specifies the font family */
+  font-weight: 700; /* Sets the font weight to bold */
 }
 /* Sets the minimum height to 100% of the viewport height */
 /* Uses flexbox for layout */

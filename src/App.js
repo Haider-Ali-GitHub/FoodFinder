@@ -2,17 +2,17 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App App-background">
       <header className="App-header">
         <p>
           BiteBuddy      
         </p>
       </header>
-      <body className='App-body'>
+      <div className='App-body'>
         <p>
           Where do you want to go? 
         </p>
-      </body>
+      </div>
     </div>
   );
 }
