@@ -25,3 +25,11 @@ body {
   font-weight: 700;
   font-size: calc(5px + 3vmin);
 }
+
+.myButton{
+  padding: 10px 20px;
+background-color: #4CAF50;    
+}
+.myButton:hover {
+  background-color: #45a049;
+}

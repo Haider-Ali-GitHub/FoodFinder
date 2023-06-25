@@ -1,4 +1,5 @@
 import './App.css';
+import './Button.css'
 
 function App() {
   return (
@@ -10,9 +11,15 @@ function App() {
       </header>
       <div className='App-body'>
         <p>
-          Where do you want to go? 
+          Where are you?
         </p>
-      </div>
+        <p>
+          <button className='myButton'>slay #1</button>
+          <button className='myButton'>slay #2</button>
+          <button className='myButton'>slay #3</button>
+          <button className='myButton'>slay #4</button>
+        </p>
+        </div>
     </div>
   );
 }
