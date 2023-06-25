@@ -5,11 +5,15 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          BiteBuddy
+          BiteBuddy      
         </p>
       </header>
       <body>
         
+        <p>
+  
+          Where do you want to go? 
+        </p>
       </body>
     </div>
   );
