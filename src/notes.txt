@@ -1,0 +1,95 @@
+welcome screen
+    gives a ddic of the website
+questions
+    1. where are you right now
+        [type answer]
+    2. surprise me or question game
+        surprise me
+        question game
+    3. how far do you wanna go
+        5 mi
+        10 mi
+        15 mi
+        20 mi
+        surprise me
+    4. price range?
+        $
+        $$
+        $$$
+        $$$$
+        surprise me
+    5. cuisine?
+        asain 
+        mediterranean
+        western
+        latin american
+        african
+        surprise me
+    6. specify cuisine
+        Asian cuisine:
+            Chinese
+            Japanese
+            Korean
+            Thai
+            Vietnamese
+            Indian
+            Indonesian
+            Malaysian
+            Filipino
+            Singaporean
+            Taiwanese
+            Cambodian
+            Burmese
+            Nepalese
+            Sri Lankan
+            Pakistani
+            Bangladeshi
+        Mediterranean cuisine:
+            Greek
+            Italian
+            Spanish
+            French
+            Turkish
+            Lebanese
+            Moroccan
+            Egyptian
+        Western cuisine:
+            American
+            British
+            Canadian
+            Australian
+            German
+            Dutch
+            Belgian
+            Irish
+            Scandinavian (Swedish, Norwegian, Danish)
+            Swiss
+        Latin American cuisine:
+            Mexican
+            Brazilian
+            Argentinian
+            Peruvian
+            Colombian
+            Venezuelan
+            Cuban
+            Chilean
+            Ecuadorian
+            Dominican
+            Puerto Rican
+        African cuisine:
+            Moroccan
+            Ethiopian
+            Nigerian
+            Egyptian
+            South African
+            Ghanaian
+            Senegalese
+            Kenyan
+            Tanzanian
+            Algerian
+            Tunisian
+        Malian
+    7. dining options
+        dine in 
+        drive thru 
+        delivery

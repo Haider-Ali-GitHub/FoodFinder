@@ -1,30 +1,27 @@
-/* Styles for elements with class name "App" */
+body {
+  background-color: rgb(221, 226, 221); /* Sets the overall background color */
+}
+
 .App {
-  text-align: center; /* Centers the text inside the element */
+  text-align: center;
 }
-.App-background{
-  background-color: rgb(221, 226, 221); /* Sets the background color */
-}
-/* Styles for elements with class name "App-header" */
+
+/* Styles for the header */
 .App-header {
-  font-family: serif; /* Specifies the font family */
-  font-weight: 700; /* Sets the font weight to bold */
-  background-color: rgb(156, 201, 156); /* Sets the background color */
-  min-height: 5vh; 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: flex-start; 
- 
-  font-size: calc(10px + 5vmin); /* Sets the font size based on the viewport size */
-  color: rgb(62, 62, 62); /* Sets the text color */
+  background-color: rgba(129, 165, 129, 0.375); /* Sets the header's background color */
+  font-family: serif;
+  font-weight: 700;
+  min-height: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: calc(10px + 5vmin);
+  color: rgb(62, 62, 62);
 }
+
 .App-body{
-  font-family: serif; /* Specifies the font family */
-  font-weight: 700; /* Sets the font weight to bold */
+  font-family: serif;
+  font-weight: 700;
+  font-size: calc(5px + 3vmin);
 }
-/* Sets the minimum height to 100% of the viewport height */
-/* Uses flexbox for layout */
-/* Sets the flex direction to column */
-/* Centers the items horizontally */
-/* Aligns the items to the top of the container */

@@ -2,7 +2,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App App-background">
+    <div className="App">
       <header className="App-header">
         <p>
           BiteBuddy      
