@@ -11,8 +11,6 @@ function App() {
     setQuestion(8);
   };
 
-  
-
   return (
     <div className="App">
       <header className="App-header">
@@ -38,7 +36,7 @@ function App() {
         )}
         {question === 3 && (
           <div>
-            <p>How far do you wanna go?</p>
+            <p>How far do you want to go?</p>
             <p>
               <button className='myButton' onClick={handleNextQuestion}>5 mi</button>
               <button className='myButton' onClick={handleNextQuestion}>10 mi</button>
