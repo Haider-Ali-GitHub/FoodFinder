@@ -1,5 +1,6 @@
 import './App.css';
 import React, {useState} from 'react';
+import './images/image.png';
 
 function App() {
   const [question, setQuestion] = useState(1);
@@ -7,6 +8,11 @@ function App() {
   const handleNextQuestion = () => {
     setQuestion(question + 1);
   };
+  const lastQuestion = () => {
+    setQuestion(8);
+  };
+
+  
 
   return (
     <div className="App">
@@ -18,7 +24,7 @@ function App() {
           <div>
             <p>Where are you?</p>
             <p>
-              <button className='myButton' onClick={handleNextQuestion}>Your mom's house</button>
+              <button className='myButton' onClick={handleNextQuestion}>[insert location]</button>
             </p>
           </div>
         )}
@@ -26,7 +32,7 @@ function App() {
           <div>
             <p>Surprise me or question game?</p>
             <p>
-              <button className='myButton' onClick={handleNextQuestion}>Surprise me</button>
+              <button className='myButton' onClick={lastQuestion}>Surprise me</button>
               <button className='myButton' onClick={handleNextQuestion}>Play the question game</button>
             </p>
           </div>
@@ -79,6 +85,33 @@ function App() {
               <button className='myButton' onClick={handleNextQuestion}>African</button>
               <button className='myButton' onClick={handleNextQuestion}>Surprise me</button>
             </p>
+          </div>
+        )}
+        {question === 7 && (
+          <div>
+            <p>What dining option do you prefer?</p>
+            <p>
+              <button className='myButton' onClick={handleNextQuestion}>Dine In</button>
+              <button className='myButton' onClick={handleNextQuestion}>Drive Thru</button>
+              <button className='myButton' onClick={handleNextQuestion}>Delivery</button>
+            </p>
+          </div>
+        )}
+        {question === 8 && (
+          <div>
+            <p>Is this where you want to eat?</p>
+            <div>
+            <img src="image.png" alt="Black Picture" width="300" height="200" class="image-style"></img>
+            </div>
+            <p>
+              <button className='myButton' onClick={handleNextQuestion}>Yes!</button>
+              <button className='myButton'> Give me another option</button>
+            </p>
+          </div>
+        )}
+        {question === 9 && (
+          <div>
+            <p>Here is more information on [insert name of restaurant]</p>
           </div>
         )}
         </div>
