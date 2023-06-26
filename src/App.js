@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState} from 'react';
-import './images/image.png';
+import './images/hello.png';
 
 function App() {
   const [question, setQuestion] = useState(1);
@@ -101,7 +101,7 @@ function App() {
           <div>
             <p>Is this where you want to eat?</p>
             <div>
-            <img src="image.png" alt="Black Picture" width="300" height="200" class="image-style"></img>
+            <img src="hello.png" alt="location"></img>
             </div>
             <p>
               <button className='myButton' onClick={handleNextQuestion}>Yes!</button>
