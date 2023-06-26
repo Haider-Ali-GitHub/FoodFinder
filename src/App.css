@@ -17,8 +17,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   font-size: calc(20px + 10vmin);
-  color: rgb(62, 62, 62);
-}
+  color: rgb(62, 62, 62);}
 
 .App-body{
   font-family: serif;
