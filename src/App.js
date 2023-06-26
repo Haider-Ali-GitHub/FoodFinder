@@ -14,10 +14,10 @@ function App() {
           Where are you?
         </p>
         <p>
-          <button className='myButton'>slay #1</button>
-          <button className='myButton'>slay #2</button>
-          <button className='myButton'>slay #3</button>
-          <button className='myButton'>slay #4</button>
+          <button className='myButton'>Your mom's house</button>
+          <button className='myButton'>Your dad's house</button>
+          <button className='myButton'>Your granny's house</button>
+          <button className='myButton'>Your dog's house</button>
         </p>
         </div>
     </div>
