@@ -4,6 +4,8 @@ import React, {useState} from 'react';
 function App() {
   const [question, setQuestion] = useState(1);
   const [completed, setCompleted] = useState(false);
+  const [cuisineCategory, setCuisineCategory] = useState(null);
+  const [cuisineSelection, setCuisineSelection] = useState(null);
 
   // const handleNextQuestion = () => {
   //   setQuestion(question + 1);
@@ -18,6 +20,8 @@ function App() {
   const handleStartOver = () => {
     setQuestion(1);
     setCompleted(false);
+    setCuisineCategory(null);
+    setCuisineSelection(null);
   };
   const lastQuestion = () => {
     setQuestion(8);
