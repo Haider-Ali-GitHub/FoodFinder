@@ -4,8 +4,13 @@ import React, {useState} from 'react';
 function App() {
   const [question, setQuestion] = useState(1);
   const [completed, setCompleted] = useState(false);
+  const [location, setLocation] = useState(null);
+  const [surpriseMe, setSurpriseMe] = useState(null);
+  const [distance, setDistance] = useState(null);
+  const [priceRange, setPriceRange] = useState(null);
   const [cuisineCategory, setCuisineCategory] = useState(null);
   const [cuisineSelection, setCuisineSelection] = useState(null);
+  const [diningOption, setDiningOption] = useState(null);
 
   // const handleNextQuestion = () => {
   //   setQuestion(question + 1);
@@ -27,17 +32,54 @@ function App() {
     setQuestion(8);
   };
 
-    const handleCuisineCategorySelection = (category) => {
-    setCuisineCategory(category);
+  //   const handleCuisineCategorySelection = (category) => {
+  //   setCuisineCategory(category);
+  //   setQuestion(6);
+  // };
+
+  // const handleCuisineSelection = (selection) => {
+  //   setCuisineSelection(selection);
+  //   setQuestion(7);
+  // };
+
+  const handleLocationSelection = (selectedLocation) => {
+    setLocation(selectedLocation);
+    setQuestion(2);
+  };
+
+  const handleSurpriseMeSelection = (selectedOption) => {
+    setSurpriseMe(selectedOption);
+    if (selectedOption === 'Surprise me') {
+      setQuestion(8);
+    } else {
+      setQuestion(3);
+    }
+  };
+
+  const handleDistanceSelection = (selectedDistance) => {
+    setDistance(selectedDistance);
+    setQuestion(4);
+  };
+
+  const handlePriceRangeSelection = (selectedPriceRange) => {
+    setPriceRange(selectedPriceRange);
+    setQuestion(5);
+  };
+
+  const handleCuisineCategorySelection = (selectedCategory) => {
+    setCuisineCategory(selectedCategory);
     setQuestion(6);
   };
 
-  const handleCuisineSelection = (selection) => {
-    setCuisineSelection(selection);
+  const handleCuisineSelection = (selectedCuisine) => {
+    setCuisineSelection(selectedCuisine);
     setQuestion(7);
   };
 
-
+  const handleDiningOptionSelection = (selectedOption) => {
+    setDiningOption(selectedOption);
+    setQuestion(8);
+  };
   return (
     <div className="App">
       <header className="App-header">
