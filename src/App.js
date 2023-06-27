@@ -146,6 +146,24 @@ function App() {
             </p>
           </div>
         )}
+        {question === 6 && cuisineCategory === 'Western' && (
+          <div>
+            <p>Specify the cuisine you are craving</p>
+            <p>
+              <button className='myButton' onClick={() => handleCuisineSelection('American')}>American</button>
+              <button className='myButton' onClick={() => handleCuisineSelection('British')}>British</button>
+              <button className='myButton' onClick={() => handleCuisineSelection('Canadian')}>Canadian</button>
+              <button className='myButton' onClick={() => handleCuisineSelection('Australian')}>Australian</button>
+              <button className='myButton' onClick={() => handleCuisineSelection('German')}>German</button>
+              <button className='myButton' onClick={() => handleCuisineSelection('Dutch')}>Dutch</button>
+              <button className='myButton' onClick={() => handleCuisineSelection('Belgian')}>Belgian</button>
+              <button className='myButton' onClick={() => handleCuisineSelection('Irish')}>Irish</button>
+              <button className='myButton' onClick={() => handleCuisineSelection('Scandinavian')}>Scandinavian</button>  
+              <button className='myButton' onClick={() => handleCuisineSelection('Swiss')}>Swiss</button>          
+              <button className='myButton' onClick={handleNextQuestion}>Surprise me</button>
+            </p>
+          </div>
+        )}
         {question === 7 && (
           <div>
             <p>What dining option do you prefer?</p>
