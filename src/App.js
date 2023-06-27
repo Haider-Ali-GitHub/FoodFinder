@@ -20,7 +20,7 @@ function App() {
     setCompleted(false);
   };
   const lastQuestion = () => {
-    setQuestion(9);
+    setQuestion(8);
   };
 
   return (
@@ -29,6 +29,17 @@ function App() {
         <p>BiteBuddy</p>
       </header>
       <div className='App-body'>
+      {completed ? (
+          <div>
+            <p>Here is more information on [insert name of restaurant]</p>
+            <div className="start-over-container">
+              <button className="start-over-button" onClick={handleStartOver}>
+                Start Over
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div>
         {question === 1 && (
           <div>
             <p>Where are you?</p>
@@ -106,28 +117,18 @@ function App() {
             </p>
           </div>
         )}
-        {question === 8 && (
-          <div>
-            <p>Is this where you want to eat?</p>
-            <p>
-              <button className='myButton' onClick={handleNextQuestion}>Yes!</button>
-              <button className='myButton'> Give me another option</button>
-            </p>
+            {question === 8 && (
+              <div>
+                <p>Is this where you want to eat?</p>
+                <p>
+                  <button className="myButton" onClick={handleNextQuestion}> Yes!</button>
+                  <button className="myButton"> Give me another option </button>
+                </p>
+              </div>
+            )}
           </div>
         )}
-        {question === 9 && (
-          <div>
-            <p>Here is more information on [insert name of restaurant]</p>
-          </div>
-        )}
-        </div>
-        {completed && (
-        <div className="start-over-container">
-          <button className="start-over-button" onClick={handleStartOver}>
-            Start Over
-          </button>
-        </div>
-      )}
+      </div>
     </div>
   );
 }
