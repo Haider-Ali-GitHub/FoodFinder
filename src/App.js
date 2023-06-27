@@ -3,12 +3,24 @@ import React, {useState} from 'react';
 
 function App() {
   const [question, setQuestion] = useState(1);
+  const [completed, setCompleted] = useState(false);
 
+  // const handleNextQuestion = () => {
+  //   setQuestion(question + 1);
+  // };
   const handleNextQuestion = () => {
-    setQuestion(question + 1);
+    if (question < 8) {
+      setQuestion(question + 1);
+    } else {
+      setCompleted(true);
+    }
+  };
+  const handleStartOver = () => {
+    setQuestion(1);
+    setCompleted(false);
   };
   const lastQuestion = () => {
-    setQuestion(8);
+    setQuestion(9);
   };
 
   return (
@@ -109,6 +121,13 @@ function App() {
           </div>
         )}
         </div>
+        {completed && (
+        <div className="start-over-container">
+          <button className="start-over-button" onClick={handleStartOver}>
+            Start Over
+          </button>
+        </div>
+      )}
     </div>
   );
 }
