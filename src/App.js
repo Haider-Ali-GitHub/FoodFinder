@@ -129,6 +129,23 @@ function App() {
             </p>
           </div>
         )}
+        {question === 6 && cuisineCategory === 'Mediterranean' && (
+          <div>
+            <p>Specify the cuisine you are craving</p>
+            <p>
+              <button className='myButton' onClick={() => handleCuisineSelection('Greek')}>Greek</button>
+              <button className='myButton' onClick={() => handleCuisineSelection('Italian')}>Italian</button>
+              <button className='myButton' onClick={() => handleCuisineSelection('Korean')}>Korean</button>
+              <button className='myButton' onClick={() => handleCuisineSelection('Spanish')}>Spanish</button>
+              <button className='myButton' onClick={() => handleCuisineSelection('French')}>French</button>
+              <button className='myButton' onClick={() => handleCuisineSelection('Turkish')}>Turkish</button>
+              <button className='myButton' onClick={() => handleCuisineSelection('Lebanese')}>Lebanese</button>
+              <button className='myButton' onClick={() => handleCuisineSelection('Moroccan')}>Moroccan</button>
+              <button className='myButton' onClick={() => handleCuisineSelection('Egyptian')}>Egyptian</button>            
+              <button className='myButton' onClick={handleNextQuestion}>Surprise me</button>
+            </p>
+          </div>
+        )}
         {question === 7 && (
           <div>
             <p>What dining option do you prefer?</p>
