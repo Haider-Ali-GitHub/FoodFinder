@@ -23,6 +23,17 @@ function App() {
     setQuestion(8);
   };
 
+    const handleCuisineCategorySelection = (category) => {
+    setCuisineCategory(category);
+    setQuestion(6);
+  };
+
+  const handleCuisineSelection = (selection) => {
+    setCuisineSelection(selection);
+    setQuestion(7);
+  };
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -85,20 +96,20 @@ function App() {
           <div>
             <p>What cuisine are you in the mood for?</p>
             <p>
-              <button className='myButton' onClick={handleNextQuestion}>Asian</button>
-              <button className='myButton' onClick={handleNextQuestion}>Mediterranean</button>
-              <button className='myButton' onClick={handleNextQuestion}>Western</button>
-              <button className='myButton' onClick={handleNextQuestion}>Latin American</button>
-              <button className='myButton' onClick={handleNextQuestion}>African</button>
+              <button className='myButton' onClick={() => handleCuisineCategorySelection('Asian')}> Asian</button>
+              <button className='myButton' onClick={() => handleCuisineCategorySelection('Mediterranean')}>Mediterranean</button>
+              <button className='myButton' onClick={() => handleCuisineCategorySelection('Western')}>Western</button>
+              <button className='myButton' onClick={() => handleCuisineCategorySelection('Latin American')}>Latin American</button>
+              <button className='myButton' onClick={() => handleCuisineCategorySelection('African')}>African</button>
               <button className='myButton' onClick={handleNextQuestion}>Surprise me</button>
             </p>
           </div>
         )}
-        {question === 6 && (
+        {question === 6 && cuisineCategory === 'Asian' && (
           <div>
             <p>Specify the cuisine you are craving</p>
             <p>
-              <button className='myButton' onClick={handleNextQuestion}>Asian</button>
+              <button className='myButton' onClick={() => handleCuisineSelection('Chinese')}>Chinese</button>
               <button className='myButton' onClick={handleNextQuestion}>Mediterranean</button>
               <button className='myButton' onClick={handleNextQuestion}>Western</button>
               <button className='myButton' onClick={handleNextQuestion}>Latin American</button>
