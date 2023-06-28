@@ -1,5 +1,6 @@
 import './App.css';
 import React, {useState} from 'react';
+import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
 
 function App() {
   const [question, setQuestion] = useState(1);
@@ -15,6 +16,17 @@ function App() {
   // const handleNextQuestion = () => {
   //   setQuestion(question + 1);
   // };
+
+  const containerStyle = {
+    width: '100%',
+    height: '500px',
+  };
+
+  const center = {
+    lat: 0,
+    lng: 0,
+  };
+
   const handleNextQuestion = () => {
     if (question < 8) {
       setQuestion(question + 1);
@@ -97,14 +109,31 @@ function App() {
           </div>
         ) : (
           <div>
-        {question === 1 && (
-          <div>
-            <p>Where are you?</p>
-            <p>
-              <button className='myButton' onClick={handleNextQuestion}>[insert location]</button>
-            </p>
-          </div>
-        )}
+            {question === 1 && (
+              <div>
+                <p>Where are you?</p>
+                <div>
+                  <LoadScript googleMapsApiKey="AIzaSyAlDrtrrBsJ2p0JIP1Q0EQ5KJA5Q_DbiLg">
+                    <GoogleMap
+                      mapContainerStyle={containerStyle}
+                      center={center}
+                      zoom={10}
+                      onClick={(e) =>
+                        handleLocationSelection({
+                          lat: e.latLng.lat(),
+                          lng: e.latLng.lng(),
+                        })
+                      }
+                    >
+                      {location && <Marker position={location} />}
+                    </GoogleMap>
+                  </LoadScript>
+                </div>
+                <button className="myButton" onClick={handleNextQuestion}>
+                  Confirm Location
+                </button>
+              </div>
+            )}
         {question === 2 && (
           <div>
             <p>Surprise me or question game?</p>
