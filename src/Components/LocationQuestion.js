@@ -6,6 +6,8 @@ const LocationQuestion = ({ handleLocationSelection, handleNextQuestion, locatio
     width: '100%',
     height: '100%',
     display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
   };
   const center = {
     lat: 0,
