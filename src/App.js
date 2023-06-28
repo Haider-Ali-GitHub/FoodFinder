@@ -1,6 +1,8 @@
 import './App.css';
 import React, {useState} from 'react';
 import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
+import LocationQuestion from './Components/LocationQuestion';
+
 
 function App() {
   const [question, setQuestion] = useState(1);
@@ -105,31 +107,13 @@ function App() {
           </div>
         ) : (
           <div>
-            {question === 1 && (
-              <div>
-                <p>Where are you?</p>
-                <div>
-                  <LoadScript googleMapsApiKey="AIzaSyAlDrtrrBsJ2p0JIP1Q0EQ5KJA5Q_DbiLg">
-                    <GoogleMap
-                      mapContainerStyle={containerStyle}
-                      center={center}
-                      zoom={10}
-                      onClick={(e) =>
-                        handleLocationSelection({
-                          lat: e.latLng.lat(),
-                          lng: e.latLng.lng(),
-                        })
-                      }
-                    >
-                      {location && <Marker position={location} />}
-                    </GoogleMap>
-                  </LoadScript>
-                </div>
-                <button className="myButton" onClick={handleNextQuestion}>
-                  Confirm Location
-                </button>
-              </div>
-            )}
+    {question === 1 && (
+      <LocationQuestion 
+        handleLocationSelection={handleLocationSelection} 
+        handleNextQuestion={handleNextQuestion} 
+        location={location} 
+      />
+    )}
         {question === 2 && (
           <div>
             <p>Surprise me or question game?</p>
