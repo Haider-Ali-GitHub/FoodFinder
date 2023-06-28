@@ -60,9 +60,9 @@ const LocationQuestion = ({ handleLocationSelection, handleNextQuestion, locatio
           </GoogleMap>
         </LoadScript>
       </div>
-      <button className="myButton" onClick={handleNextQuestion}>
+      {/* <button className="myButton" onClick={handleNextQuestion}>
         Confirm Location
-      </button>
+      </button> */}
     </div>
   );
 }
