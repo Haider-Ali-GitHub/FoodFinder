@@ -2,6 +2,9 @@ import './App.css';
 import React, {useState} from 'react';
 import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
 import LocationQuestion from './Components/LocationQuestion';
+import GameQuestion from './Components/QuestionGame';
+import DistanceQuestion from './Components/DistanceQuestion';
+import PriceQuestion from './Components/PriceQuestion';
 
 
 function App() {
@@ -114,38 +117,21 @@ function App() {
         location={location} 
       />
     )}
-        {question === 2 && (
-          <div>
-            <p>Surprise me or question game?</p>
-            <p>
-              <button className='myButton' onClick={lastQuestion}>Surprise me</button>
-              <button className='myButton' onClick={handleNextQuestion}>Play the question game</button>
-            </p>
-          </div>
-        )}
+    {question === 2 && (
+      <GameQuestion 
+        handleNextQuestion={handleNextQuestion} 
+        lastQuestion={lastQuestion} 
+      />
+    )}
         {question === 3 && (
-          <div>
-            <p>How far do you want to go?</p>
-            <p>
-              <button className='myButton' onClick={handleNextQuestion}>5 mi</button>
-              <button className='myButton' onClick={handleNextQuestion}>10 mi</button>
-              <button className='myButton' onClick={handleNextQuestion}>15 mi</button>
-              <button className='myButton' onClick={handleNextQuestion}>20 mi</button>
-              <button className='myButton' onClick={handleNextQuestion}>Surprise me</button>
-            </p>
-          </div>
+          <DistanceQuestion        
+            handleNextQuestion={handleNextQuestion}
+          />
         )}
         {question === 4 && (
-          <div>
-            <p>What is your price range?</p>
-            <p>
-              <button className='myButton' onClick={handleNextQuestion}>$</button>
-              <button className='myButton' onClick={handleNextQuestion}>$$</button>
-              <button className='myButton' onClick={handleNextQuestion}>$$$</button>
-              <button className='myButton' onClick={handleNextQuestion}>$$$$</button>
-              <button className='myButton' onClick={handleNextQuestion}>Surprise me</button>
-            </p>
-          </div>
+          <PriceQuestion
+            handleNextQuestion={handleNextQuestion}
+          />
         )}
         {question === 5 && (
           <div>
