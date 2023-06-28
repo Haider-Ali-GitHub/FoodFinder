@@ -13,10 +13,6 @@ function App() {
   const [cuisineSelection, setCuisineSelection] = useState(null);
   const [diningOption, setDiningOption] = useState(null);
 
-  // const handleNextQuestion = () => {
-  //   setQuestion(question + 1);
-  // };
-
   const containerStyle = {
     width: '100%',
     height: '500px',
