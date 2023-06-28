@@ -1,21 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
 
 const LocationQuestion = ({ handleLocationSelection, handleNextQuestion, location }) => {
   const containerStyle = {
     width: '100%',
-    height: '500px',
+    height: '100%',
+    display: 'flex',
   };
   const center = {
     lat: 0,
     lng: 0,
   };
+  
+  const autocompleteInputRef = useRef(null);
+  const [autocomplete, setAutocomplete] = useState(null);
+
+  useEffect(() => {
+    if (autocomplete) {
+      autocomplete.addListener('place_changed', () => {
+        const place = autocomplete.getPlace();
+        if (!place.geometry) {
+          window.alert(`No details available for input: '${place.name}'`);
+          return;
+        }
+
+        const location = {
+          lat: place.geometry.location.lat(),
+          lng: place.geometry.location.lng(),
+        };
+
+        handleLocationSelection(location);
+      });
+    }
+  }, [autocomplete]);
+
+  const handleApiLoad = () => {
+    const autocompleteObject = new window.google.maps.places.Autocomplete(autocompleteInputRef.current);
+    setAutocomplete(autocompleteObject);
+  };
 
   return (
     <div>
       <p>Where are you?</p>
+      <input id="autocomplete" ref={autocompleteInputRef} type="text" placeholder="Search Location"/>
       <div>
-        <LoadScript googleMapsApiKey="AIzaSyAlDrtrrBsJ2p0JIP1Q0EQ5KJA5Q_DbiLg">
+        <LoadScript googleMapsApiKey="AIzaSyAlDrtrrBsJ2p0JIP1Q0EQ5KJA5Q_DbiLg" libraries={["places"]} onLoad={handleApiLoad}>
           <GoogleMap
             mapContainerStyle={containerStyle}
             center={center}
