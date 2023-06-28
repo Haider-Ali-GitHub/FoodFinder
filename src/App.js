@@ -7,6 +7,8 @@ import DistanceQuestion from './Components/DistanceQuestion';
 import PriceQuestion from './Components/PriceQuestion';
 import CuisineQuestion from './Components/CuisineQuestion';
 import CategoryQuestion from './Components/CategoryQuestion';
+import DiningQuestion from './Components/DiningQuestion';
+import FinalQuestion from './Components/FinalQuestion';
 
 
 function App() {
@@ -19,16 +21,6 @@ function App() {
   const [cuisineCategory, setCuisineCategory] = useState(null);
   const [cuisineSelection, setCuisineSelection] = useState(null);
   const [diningOption, setDiningOption] = useState(null);
-
-  const containerStyle = {
-    width: '100%',
-    height: '500px',
-  };
-
-  const center = {
-    lat: 0,
-    lng: 0,
-  };
 
   const handleNextQuestion = () => {
     if (question < 8) {
@@ -46,16 +38,6 @@ function App() {
   const lastQuestion = () => {
     setQuestion(8);
   };
-
-  //   const handleCuisineCategorySelection = (category) => {
-  //   setCuisineCategory(category);
-  //   setQuestion(6);
-  // };
-
-  // const handleCuisineSelection = (selection) => {
-  //   setCuisineSelection(selection);
-  //   setQuestion(7);
-  // };
 
   const handleLocationSelection = (selectedLocation) => {
     setLocation(selectedLocation);
@@ -143,30 +125,21 @@ function App() {
         )}
         {question === 6 && (
           <CategoryQuestion
-          handleCuisineSelection={handleCuisineCategorySelection}
+          handleCuisineSelection={handleCuisineSelection}
           handleNextQuestion={handleNextQuestion}
           cuisineCategory={cuisineCategory}
           question={question}
           />
         )}
         {question === 7 && (
-          <div>
-            <p>What dining option do you prefer?</p>
-            <p>
-              <button className='myButton' onClick={handleNextQuestion}>Dine In</button>
-              <button className='myButton' onClick={handleNextQuestion}>Drive Thru</button>
-              <button className='myButton' onClick={handleNextQuestion}>Delivery</button>
-            </p>
-          </div>
+          <DiningQuestion
+            handleNextQuestion={handleNextQuestion}
+          />
         )}
             {question === 8 && (
-              <div>
-                <p>Is this where you want to eat?</p>
-                <p>
-                  <button className="myButton" onClick={handleNextQuestion}> Yes!</button>
-                  <button className="myButton"> Give me another option </button>
-                </p>
-              </div>
+              <FinalQuestion
+                handleNextQuestion={handleNextQuestion}
+              />
             )}
           </div>
         )}

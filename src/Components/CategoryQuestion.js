@@ -1,8 +1,10 @@
 import React from "react";
-function CategoryQuestion ({handleCuisineSelection, handleNextQuestion, cuisineCategory,question}) {
+import '../App.js';
+function CategoryQuestion ({handleCuisineSelection, handleNextQuestion, cuisineCategory}) {
+  
     return(
         <div>
-            {question === 6 && cuisineCategory === 'Asian' && (
+            {cuisineCategory === 'Asian' && (
           <div>
             <p>Specify the cuisine you are craving</p>
             <p>
@@ -26,7 +28,7 @@ function CategoryQuestion ({handleCuisineSelection, handleNextQuestion, cuisineC
             </p>
           </div>
         )}
-        {question === 6 && cuisineCategory === 'Mediterranean' && (
+        {cuisineCategory === 'Mediterranean' && (
           <div>
             <p>Specify the cuisine you are craving</p>
             <p>
@@ -43,7 +45,7 @@ function CategoryQuestion ({handleCuisineSelection, handleNextQuestion, cuisineC
             </p>
           </div>
         )}
-        {question === 6 && cuisineCategory === 'Western' && (
+        {cuisineCategory === 'Western' && (
           <div>
             <p>Specify the cuisine you are craving</p>
             <p>
@@ -61,7 +63,7 @@ function CategoryQuestion ({handleCuisineSelection, handleNextQuestion, cuisineC
             </p>
           </div>
         )}
-        {question === 6 && cuisineCategory === 'Latin American' && (
+        {cuisineCategory === 'Latin American' && (
           <div>
             <p>Specify the cuisine you are craving</p>
             <p>
@@ -79,7 +81,7 @@ function CategoryQuestion ({handleCuisineSelection, handleNextQuestion, cuisineC
             </p>
           </div>
         )}
-        {question === 6 && cuisineCategory === 'African' && (
+        {cuisineCategory === 'African' && (
           <div>
             <p>Specify the cuisine you are craving</p>
             <p>
