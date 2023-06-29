@@ -2,19 +2,19 @@ import React, { useState, useEffect, useRef } from 'react';
 import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
 
 const LocationQuestion = ({ handleLocationSelection, handleNextQuestion, location }) => {
-  const containerStyle = {
-    width: '100%',
-    height: '400px', // Increase the height as per your requirement
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: '10px', // Make the container rounder
-    overflow: 'hidden', // Ensure content within the container stays contained
+  const containerStyle = { //gives css inline styles to an element
+    width: '100%', // Takes the full width of its parent element
+    height: '400px', // The height is set to 400 pixels
+    display: 'flex', // Allowing flexibility with its child elements' positioning and alignment
+    justifyContent: 'center', // Child elements are centered along the horizontal line in the flex layout
+    alignItems: 'center', // Child elements are centered along the vertical line in the flex layout
+    borderRadius: '10px', // The corners of the element are rounded with a radius of 10 pixels
+    overflow: 'hidden', // Anything extending beyond the boundaries of the element should be hidden
   };
-  const center = {
-    lat: 0,
-    lng: 0,
-  };
+    // const center = {
+    //   lat: 0, // The latitude for the center point
+    //   lng: 0, // The longitude for the center point
+    // };
   
   const autocompleteInputRef = useRef(null);
   const [autocomplete, setAutocomplete] = useState(null);
@@ -70,11 +70,10 @@ const LocationQuestion = ({ handleLocationSelection, handleNextQuestion, locatio
           placeholder="Search Your Location For the Best Food Spots Near You!"
           style={{
             width: '50%',
-            height: '40px', // Increase the height as per your requirement
-            borderRadius: '200px', // Make the input rounder
-            padding: '20px', // Add some padding for better appearance
-            fontSize: '16px', // Adjust the font size as per your preference
-            paddingRight: '70px', // Add space for the button
+            height: '40px', 
+            borderRadius: '200px', 
+            padding: '20px', 
+            fontSize: '16px', 
           }}
           onChange={handleLocationInputChange}
         />
@@ -83,7 +82,6 @@ const LocationQuestion = ({ handleLocationSelection, handleNextQuestion, locatio
             style={{
               position: 'absolute',
               top: '50%',
-              right: '430px',
               transform: 'translateY(-50%)',
               width: '50px',
               height: '50px',

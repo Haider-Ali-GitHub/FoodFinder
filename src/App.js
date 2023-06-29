@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState} from 'react';
-import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
+// import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
 import LocationQuestion from './Components/LocationQuestion';
 import GameQuestion from './Components/QuestionGame';
 import DistanceQuestion from './Components/DistanceQuestion';
@@ -15,12 +15,14 @@ function App() {
   const [question, setQuestion] = useState(1);
   const [completed, setCompleted] = useState(false);
   const [location, setLocation] = useState(null);
-  const [surpriseMe, setSurpriseMe] = useState(null);
-  const [distance, setDistance] = useState(null);
-  const [priceRange, setPriceRange] = useState(null);
+  // const [surpriseMe, setSurpriseMe] = useState(null);
+  // const [distance, setDistance] = useState(null);
+  // const [priceRange, setPriceRange] = useState(null);
   const [cuisineCategory, setCuisineCategory] = useState(null);
-  const [cuisineSelection, setCuisineSelection] = useState(null);
-  const [diningOption, setDiningOption] = useState(null);
+  const [
+    // cuisineSelection, 
+    setCuisineSelection] = useState(null);
+  // const [diningOption, setDiningOption] = useState(null);
 
   const handleNextQuestion = () => {
     if (question < 8) {
@@ -44,24 +46,24 @@ function App() {
     setQuestion(2);
   };
 
-  const handleSurpriseMeSelection = (selectedOption) => {
-    setSurpriseMe(selectedOption);
-    if (selectedOption === 'Surprise me') {
-      setQuestion(8);
-    } else {
-      setQuestion(3);
-    }
-  };
+  // const handleSurpriseMeSelection = (selectedOption) => {
+  //   setSurpriseMe(selectedOption);
+  //   if (selectedOption === 'Surprise me') {
+  //     setQuestion(8);
+  //   } else {
+  //     setQuestion(3);
+  //   }
+  // };
 
-  const handleDistanceSelection = (selectedDistance) => {
-    setDistance(selectedDistance);
-    setQuestion(4);
-  };
+  // const handleDistanceSelection = (selectedDistance) => {
+  //   setDistance(selectedDistance);
+  //   setQuestion(4);
+  // };
 
-  const handlePriceRangeSelection = (selectedPriceRange) => {
-    setPriceRange(selectedPriceRange);
-    setQuestion(5);
-  };
+  // const handlePriceRangeSelection = (selectedPriceRange) => {
+  //   setPriceRange(selectedPriceRange);
+  //   setQuestion(5);
+  // };
 
   const handleCuisineCategorySelection = (selectedCategory) => {
     setCuisineCategory(selectedCategory);
@@ -73,10 +75,10 @@ function App() {
     setQuestion(7);
   };
 
-  const handleDiningOptionSelection = (selectedOption) => {
-    setDiningOption(selectedOption);
-    setQuestion(8);
-  };
+  // const handleDiningOptionSelection = (selectedOption) => {
+  //   setDiningOption(selectedOption);
+  //   setQuestion(8);
+  // };
   return (
     <div className="App">
       <header className="App-header">
