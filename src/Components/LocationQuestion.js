@@ -18,6 +18,7 @@ const LocationQuestion = ({ handleLocationSelection, handleNextQuestion, locatio
   
   const autocompleteInputRef = useRef(null);
   const [autocomplete, setAutocomplete] = useState(null);
+  const [selectedLocation, setSelectedLocation] = useState(null);
 
   useEffect(() => {
     if (autocomplete) {
@@ -33,7 +34,7 @@ const LocationQuestion = ({ handleLocationSelection, handleNextQuestion, locatio
           lng: place.geometry.location.lng(),
         };
 
-        handleLocationSelection(location);
+        setSelectedLocation(location);
       });
     }
   }, [autocomplete]);
@@ -41,6 +42,13 @@ const LocationQuestion = ({ handleLocationSelection, handleNextQuestion, locatio
   const handleApiLoad = () => {
     const autocompleteObject = new window.google.maps.places.Autocomplete(autocompleteInputRef.current);
     setAutocomplete(autocompleteObject);
+  };
+
+  const handleConfirmLocation = () => {
+    if (selectedLocation) {
+      handleLocationSelection(selectedLocation);
+      handleNextQuestion();
+    }
   };
 
   return (
@@ -61,24 +69,26 @@ const LocationQuestion = ({ handleLocationSelection, handleNextQuestion, locatio
       />
       <div style={containerStyle}>
         <LoadScript googleMapsApiKey="AIzaSyAlDrtrrBsJ2p0JIP1Q0EQ5KJA5Q_DbiLg" libraries={["places"]} onLoad={handleApiLoad}>
-          {/* { <GoogleMap
-            mapContainerStyle={{ width: '50%', height: '100%' }}
-            center={center}
-            zoom={10}
-            onClick={(e) =>
-              handleLocationSelection({
-                lat: e.latLng.lat(),
-                lng: e.latLng.lng(),
-              })
-            }
-          >
-            {location && <Marker position={location} />}
-          </GoogleMap> }  */}
+          {selectedLocation && (
+            <GoogleMap
+              mapContainerStyle={{ width: '50%', height: '100%' }}
+              center={selectedLocation}
+              zoom={16}
+              onClick={(e) =>
+                setSelectedLocation({
+                  lat: e.latLng.lat(),
+                  lng: e.latLng.lng(),
+                })
+              }
+            >
+              <Marker position={selectedLocation} />
+            </GoogleMap>
+          )}
         </LoadScript>
       </div>
-      {/* <button className="myButton" onClick={handleNextQuestion}>
+      <button className="myButton" onClick={handleConfirmLocation}>
         Confirm Location
-      </button> */}
+      </button>
     </div>
   );
 }
