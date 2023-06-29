@@ -1,0 +1,53 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+const RestaurantInfo = ({ location, price, cuisine, distance, dining }) => {
+  const [restaurantInfo, setRestaurantInfo] = useState(null);
+
+  useEffect(() => {
+    const getRestaurantInfo = async () => {
+      try {
+        const response = await axios.get('https://api.yelp.com/v3/businesses/search', {
+          headers: {
+            Authorization: `Bearer ${unUR-EpzUzyzgtVWYtHth_R_SOSmj2-x4vm8eTwYEDoafnn2SAUXWM_J63BqkzYtK0-OveUOexmIs00OuE2J59QXLIMmAZa3NrfVfcs5nLP0yrtZRQcl85XnROedZHYx}`
+          },
+          params: {
+            term: cuisine,
+            location: location,
+            price: price,
+            categories: dining,
+            radius: distance,
+            sort_by: 'best_match'
+          }
+        });
+
+        if (response.data.businesses.length > 0) {
+          setRestaurantInfo(response.data.businesses[0]);
+        }
+      } catch (error) {
+        console.error(`Error getting restaurant info: ${error}`);
+      }
+    };
+
+    getRestaurantInfo();
+  }, [location, price, cuisine, distance, dining]);
+
+  return (
+    <div>
+      {restaurantInfo ? (
+        <div>
+          <p>Here is more information on {restaurantInfo.name}</p>
+          <img src={restaurantInfo.image_url} alt="restaurant" />
+          <p>Location: {restaurantInfo.location.address1}</p>
+          <p>Phone: {restaurantInfo.phone}</p>
+          <p>Rating: {restaurantInfo.rating}</p>
+          <p>Price: {restaurantInfo.price}</p>
+        </div>
+      ) : (
+        <p>Loading restaurant information...</p>
+      )}
+    </div>
+  );
+};
+
+export default RestaurantInfo;
