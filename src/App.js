@@ -19,9 +19,7 @@ function App() {
   // const [distance, setDistance] = useState(null);
   // const [priceRange, setPriceRange] = useState(null);
   const [cuisineCategory, setCuisineCategory] = useState(null);
-  const [
-    // cuisineSelection, 
-    setCuisineSelection] = useState(null);
+  const [ cuisineSelection, setCuisineSelection] = useState(null);
   // const [diningOption, setDiningOption] = useState(null);
 
   const handleNextQuestion = () => {
