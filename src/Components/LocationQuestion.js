@@ -61,7 +61,7 @@ const LocationQuestion = ({ handleLocationSelection, handleNextQuestion, locatio
       />
       <div style={containerStyle}>
         <LoadScript googleMapsApiKey="AIzaSyAlDrtrrBsJ2p0JIP1Q0EQ5KJA5Q_DbiLg" libraries={["places"]} onLoad={handleApiLoad}>
-          { <GoogleMap
+          {/* { <GoogleMap
             mapContainerStyle={{ width: '50%', height: '100%' }}
             center={center}
             zoom={10}
@@ -73,7 +73,7 @@ const LocationQuestion = ({ handleLocationSelection, handleNextQuestion, locatio
             }
           >
             {location && <Marker position={location} />}
-          </GoogleMap> } 
+          </GoogleMap> }  */}
         </LoadScript>
       </div>
       {/* <button className="myButton" onClick={handleNextQuestion}>
