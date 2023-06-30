@@ -1,6 +1,6 @@
 import React from 'react';
 
-function GameQuestion({ handleNextQuestion, lastQuestion }) {
+function QuestionGame({ handleNextQuestion, lastQuestion }) {
   return (
     <div>
       <p>Surprise me or question game?</p>
@@ -12,4 +12,4 @@ function GameQuestion({ handleNextQuestion, lastQuestion }) {
   );
 }
 
-export default GameQuestion;
+export default QuestionGame;

@@ -15,12 +15,12 @@ function App() {
   const [question, setQuestion] = useState(1);
   const [completed, setCompleted] = useState(false);
   const [location, setLocation] = useState(null);
-  // const [surpriseMe, setSurpriseMe] = useState(null);
-  // const [distance, setDistance] = useState(null);
-  // const [priceRange, setPriceRange] = useState(null);
+  const [surpriseMe, setSurpriseMe] = useState(null);
+  const [distance, setDistance] = useState(null);
+  const [priceRange, setPriceRange] = useState(null);
   const [cuisineCategory, setCuisineCategory] = useState(null);
   const [ cuisineSelection, setCuisineSelection] = useState(null);
-  // const [diningOption, setDiningOption] = useState(null);
+  const [diningOption, setDiningOption] = useState(null);
 
   const handleNextQuestion = () => {
     if (question < 8) {
