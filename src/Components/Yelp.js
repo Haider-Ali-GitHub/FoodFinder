@@ -1,15 +1,30 @@
+// (Cynthia) IMPORTANT: please look at all the comments I made under parameters we 
+// might run into some issues because of categories (maybe) and dining options.
+// price and radius need to be altered to adjust to the API's requirements.
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+
 import React, { useState } from "react";
 import yelp from 'yelp-fusion';
 import '../App.js';
-// // import CategoryQuestion from "./CategoryQuestion";
-// // import CuisineQuestion from "./CuisineQuestion";
-// // import DiningQuestion from "./DiningQuestion";
-// // import DistanceQuestion from "./DistanceQuestion";
-// // import FinalQuestion from "./FinalQuestion";
-// // import LocationQuestion from "./LocationQuestion";
-// // import PriceQuestion from "./PriceQuestion";
-// // import QuestionGame from "./QuestionGame";
-
 import {
     location,
     distance,
@@ -33,7 +48,7 @@ function Yelp({}) {
             radius: distance, //needs to be converted to meters
             price: priceRange, //needs to be converted to numbers ($ = 1,$$ = 2)
             open_now: true, //maybe add as an option to our questions?
-            limit: 20, //going to change, temporary for now
+            limit: 20, //store limit, going to change, temporary for now
             attributes: diningOption,   //API does not provide a specific parameter 
                                         //for filtering restaurants based on the availability 
                                         //of drive-thru service
