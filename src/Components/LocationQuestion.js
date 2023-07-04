@@ -11,10 +11,6 @@ const LocationQuestion = ({ handleLocationSelection, handleNextQuestion, locatio
     borderRadius: '10px', // The corners of the element are rounded with a radius of 10 pixels
     overflow: 'hidden', // Anything extending beyond the boundaries of the element should be hidden
   };
-    // const center = {
-    //   lat: 0, // The latitude for the center point
-    //   lng: 0, // The longitude for the center point
-    // };
   
   const autocompleteInputRef = useRef(null);
   const [autocomplete, setAutocomplete] = useState(null);

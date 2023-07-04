@@ -30,7 +30,7 @@ function App() {
     }
   };
   const handleStartOver = () => {
-    setQuestion(1);
+    setQuestion(2);
     setCompleted(false);
     setCuisineCategory(null);
     setCuisineSelection(null);
@@ -139,6 +139,7 @@ function App() {
             {question === 8 && (
               <FinalQuestion
                 handleNextQuestion={handleNextQuestion}
+                handleStartOver={handleStartOver}
               />
             )}
           </div>
