@@ -45,7 +45,7 @@ function Yelp({}) {
             term: 'restaurant',
             location: location,
             categories: cuisineCategory, cuisineSelection,
-            radius: distance, //needs to be converted to meters
+            radius: distance * 1609.34, 
             price: priceRange, //needs to be converted to numbers ($ = 1,$$ = 2)
             open_now: true, //maybe add as an option to our questions?
             limit: 20, //store limit, going to change, temporary for now
