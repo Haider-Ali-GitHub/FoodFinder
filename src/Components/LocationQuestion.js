@@ -1,39 +1,37 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
 
-const LocationQuestion = ({ handleLocationSelection, handleNextQuestion, location }) => {
-  const containerStyle = { //gives css inline styles to an element
-    width: '100%', // Takes the full width of its parent element
-    height: '400px', // The height is set to 400 pixels
-    display: 'flex', // Allowing flexibility with its child elements' positioning and alignment
-    justifyContent: 'center', // Child elements are centered along the horizontal line in the flex layout
-    alignItems: 'center', // Child elements are centered along the vertical line in the flex layout
-    borderRadius: '10px', // The corners of the element are rounded with a radius of 10 pixels
-    overflow: 'hidden', // Anything extending beyond the boundaries of the element should be hidden
-  };
-  
+const LocationQuestion = ({ handleLocationSelection, handleNextQuestion }) => {
+  const containerStyle = { width: '100%', height: '400px' };
   const autocompleteInputRef = useRef(null);
   const [autocomplete, setAutocomplete] = useState(null);
   const [selectedLocation, setSelectedLocation] = useState(null);
   const [isLocationEntered, setIsLocationEntered] = useState(false);
 
   useEffect(() => {
-    if (autocomplete) {
-      autocomplete.addListener('place_changed', () => {
-        const place = autocomplete.getPlace();
-        if (!place.geometry) {
-          window.alert(`No details available for input: '${place.name}'`);
-          return;
-        }
+    if (!autocomplete) return;
 
-        const location = {
-          lat: place.geometry.location.lat(),
-          lng: place.geometry.location.lng(),
-        };
+    const placeChangedListener = () => {
+      const place = autocomplete.getPlace();
+      if (!place.geometry) {
+        window.alert(`No details available for input: '${place.name}'`);
+        return;
+      }
+      const location = { lat: place.geometry.location.lat(), lng: place.geometry.location.lng() };
+      setSelectedLocation(location);
+    };
 
-        setSelectedLocation(location);
-      });
+    // Add listener if google object is available
+    if (window.google) {
+      autocomplete.addListener('place_changed', placeChangedListener);
     }
+
+    // Cleanup function to remove listener
+    return () => {
+      if (window.google && autocomplete) {
+        window.google.maps.event.clearListeners(autocomplete, 'place_changed');
+      }
+    };
   }, [autocomplete]);
 
   const handleApiLoad = () => {
@@ -47,13 +45,15 @@ const LocationQuestion = ({ handleLocationSelection, handleNextQuestion, locatio
   };
 
   const handleGoButtonClick = () => {
-    if (selectedLocation) {
-      handleLocationSelection(selectedLocation);
-      handleNextQuestion();
-    } else {
+    if (!selectedLocation) {
       window.alert('Please select a valid location');
+      return;
     }
+    handleLocationSelection(selectedLocation);
+    handleNextQuestion();
   };
+
+  const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY; // Load API key from environment
 
   return (
     <div>
@@ -66,10 +66,10 @@ const LocationQuestion = ({ handleLocationSelection, handleNextQuestion, locatio
           placeholder="Search Your Location For the Best Food Spots Near You!"
           style={{
             width: '50%',
-            height: '40px', 
-            borderRadius: '200px', 
-            padding: '20px', 
-            fontSize: '16px', 
+            height: '40px',
+            borderRadius: '200px',
+            padding: '20px',
+            fontSize: '16px',
           }}
           onChange={handleLocationInputChange}
         />
@@ -93,7 +93,7 @@ const LocationQuestion = ({ handleLocationSelection, handleNextQuestion, locatio
         )}
       </div>
       <div style={containerStyle}>
-        <LoadScript googleMapsApiKey="AIzaSyAlDrtrrBsJ2p0JIP1Q0EQ5KJA5Q_DbiLg" libraries={["places"]} onLoad={handleApiLoad}>
+        <LoadScript googleMapsApiKey={googleMapsApiKey} libraries={["places"]} onLoad={handleApiLoad}>
           {selectedLocation && (
             <GoogleMap
               mapContainerStyle={{ width: '55%', height: '100%' }}
@@ -113,6 +113,6 @@ const LocationQuestion = ({ handleLocationSelection, handleNextQuestion, locatio
       </div>
     </div>
   );
-}
+};
 
 export default LocationQuestion;
